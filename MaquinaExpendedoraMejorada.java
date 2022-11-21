@@ -23,6 +23,12 @@ public class MaquinaExpendedoraMejorada {
         estacionOrigen = origen;
         estacionDestino = destino;
     }
+    
+    public MaquinaExpendedoraMejorada() {
+        precioBillete = 20;
+        estacionOrigen = "León";
+        estacionDestino = "Madrid";
+    }
 
     /**
      * Devuelve el precio del billete
@@ -55,7 +61,8 @@ public class MaquinaExpendedoraMejorada {
      */
     public void imprimirBillete() {
         int cantidadDeDineroQueFalta = (precioBillete - balanceClienteActual);
-        if (cantidadDeDineroQueFalta <= 0) {        
+
+        if (cantidadDeDineroQueFalta <= 0) {               
             // Simula la impresion de un billete
             System.out.println("##################");
             System.out.println("# Billete de tren:");
