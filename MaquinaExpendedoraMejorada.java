@@ -26,6 +26,7 @@ public class MaquinaExpendedoraMejorada {
     
     public MaquinaExpendedoraMejorada() {
         precioBillete = 20;
+
         balanceClienteActual = 0;
         totalDineroAcumulado = 0;
         estacionOrigen = "León";
