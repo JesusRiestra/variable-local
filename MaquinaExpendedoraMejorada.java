@@ -8,7 +8,6 @@ public class MaquinaExpendedoraMejorada {
     private int totalDineroAcumulado;
     // El número de billetes vendidos
     private int billetesVendidos;
-    public static int contadorBilletesVendidos = 0;
     // El origen del billete
     private String estacionOrigen;
     // El destino del billete
@@ -50,12 +49,12 @@ public class MaquinaExpendedoraMejorada {
     }
     
     public int getNumeroBilletesVendidos() {
-        billetesVendidos = contadorBilletesVendidos;
+        billetesVendidos = billetesVendidos;
         return billetesVendidos;
     }
     
     public void imprimirNumeroBilletesVendidos() {
-        System.out.println("Se han vendido " + contadorBilletesVendidos + " billetes");
+        System.out.println("Se han vendido " + billetesVendidos + " billetes");
     }
     
     /**
@@ -109,7 +108,7 @@ public class MaquinaExpendedoraMejorada {
             totalDineroAcumulado = totalDineroAcumulado + precioBillete;
             // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
             balanceClienteActual = balanceClienteActual - precioBillete;
-            contadorBilletesVendidos++;
+            billetesVendidos++;
         }
         else {
             System.out.println("Necesitas introducir " + (cantidadDeDineroQueFalta) + " euros mas!");
