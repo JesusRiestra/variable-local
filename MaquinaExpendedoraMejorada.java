@@ -15,11 +15,6 @@ public class MaquinaExpendedoraMejorada {
     // El tipo de máquina que creamos (normal o mejorada)
     private boolean tipoDeMaquina;
     
-    private String premio;
-    
-    private String normal;
-    // El descuento que se aplica en las maquinas con premio
-    private float descuento;
     /**
      * Crea una maquina expendedora de billetes de tren con el 
      * precio del billete y el origen y destino dados. Se asume que el precio
@@ -33,7 +28,6 @@ public class MaquinaExpendedoraMejorada {
         estacionDestino = destino;
         billetesVendidos = 0;
         tipoDeMaquina = tipoMaquina;
-        descuento = (precioBillete * 25/ 100);
     }
     
     public MaquinaExpendedoraMejorada(boolean tipoMaquina) {
@@ -44,7 +38,6 @@ public class MaquinaExpendedoraMejorada {
         estacionDestino = "Madrid";
         billetesVendidos = 0;
         tipoDeMaquina = tipoMaquina;
-        descuento = (precioBillete * 25/ 100);
     }
 
     /**
@@ -118,9 +111,8 @@ public class MaquinaExpendedoraMejorada {
             System.out.println();
             
             if (tipoDeMaquina == true) {
+                int descuento = (precioBillete * 25 / 100);
                 System.out.println("# Has conseguido un descuento de " + descuento + " euros!");
-            }
-            else if (tipoDeMaquina == false) {
             }
             totalDineroAcumulado = totalDineroAcumulado + precioBillete;
             // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
