@@ -133,11 +133,8 @@ public class MaquinaExpendedoraMejorada {
                 billetesVendidos++;
                 billetesDisponibles--;
             }
-            else if (balanceClienteActual < precioBillete) {
+            else {
                 System.out.println("Necesitas introducir " + (cantidadDeDineroQueFalta) + " euros mas!");
-            }
-            else if (billetesDisponibles <= 0) {
-                System.out.println("No quedan más billetes disponibles!");
             }
         }
     }
