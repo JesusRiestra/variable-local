@@ -8,6 +8,8 @@ public class MaquinaExpendedoraMejorada {
     private int totalDineroAcumulado;
     // El número de billetes vendidos
     private int billetesVendidos;
+
+    private int billetesNecesariosParaPremio = 0;
     // El origen del billete
     private String estacionOrigen;
     // El destino del billete
@@ -124,13 +126,17 @@ public class MaquinaExpendedoraMejorada {
                 System.out.println();
 
                 if (tipoDeMaquina == true) {
-                    int descuento = (precioBillete * 25 / 100);
-                    System.out.println("# Has conseguido un descuento de " + descuento + " euros!");
+                    if (billetesNecesariosParaPremio == 3) {
+                        int descuento = (precioBillete * 25 / 100);
+                        System.out.println("# Has conseguido un descuento de " + descuento + " euros!");
+                        billetesNecesariosParaPremio = -1;
+                    }
                 }
                 totalDineroAcumulado = totalDineroAcumulado + precioBillete;
                 // Reduce el balance del cliente actual dejandole seguir utilizando la maquina
                 balanceClienteActual = balanceClienteActual - precioBillete;
                 billetesVendidos++;
+                billetesNecesariosParaPremio++;
                 billetesDisponibles--;
             }
             else {
